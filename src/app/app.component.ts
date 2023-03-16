@@ -8,13 +8,15 @@ import { SuperHeroService } from './services/super-hero.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  url = 'SuperHero';
   title = 'SUPERHERO.UI';
   heroes: SuperHero[] = [];
 
   constructor(private superHeroService: SuperHeroService) {}
 
   ngOnInit(): void {
-    this.heroes = this.superHeroService.getSuperHero();
-    console.log(this.heroes);
+    this.superHeroService
+      .getSuperHero()
+      .subscribe((result: SuperHero[]) => (this.heroes = result));
   }
 }
