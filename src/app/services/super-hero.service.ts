@@ -14,6 +14,7 @@ export class SuperHeroService {
     hero.firstName = 'Peter';
     hero.lastName = 'Parker';
     hero.place = 'New York City';
+
     return [hero];
   }
 }
